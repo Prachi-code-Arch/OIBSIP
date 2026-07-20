@@ -5,9 +5,10 @@ This repository contains all task submissions for my Oasis Infobyte internship, 
 Each project folder is self-contained with its own source code, README, and screenshots, and can be opened or run independently.
 
 ## 🌐 Web Development & Design — Level 2
+
 | # | Project | Description | README | Live Demo |
 |---|---------|-------------|--------|-----------|
-| 1 | Calculator | A calculator with real state management (no `eval()`) and division-by-zero handling | [README](https://github.com/Prachi-code-Arch/OIBSIP/tree/main/WebDev-L2-Calculator) | [Live Demo](https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-Calculator/) |
+| 1 | Calculator | A calculator with real state management (no `eval()`) and division-by-zero handling | [README](./WebDev-L2-Calculator/) | [Live Demo](https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-Calculator/) |
 | 2 | Tribute Page | A semantic HTML5 tribute page for Ada Lovelace | [README](https://github.com/Prachi-code-Arch/OIBSIP/tree/main/WebDev-L2-TributePage) | [Live Demo](https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-TributePage/) |
 | 3 | To-Do App | An interactive to-do list with inline editing, timestamps, and `localStorage` persistence | [README](https://github.com/Prachi-code-Arch/OIBSIP/tree/main/WebDev-L2-TodoApp) | [Live Demo](https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-TodoApp/) |
 | 4 | Login Authentication System | A client-side auth flow demo (registration, login, protected dashboard) using SHA-256 hashing | [README](https://github.com/Prachi-code-Arch/OIBSIP/tree/main/WebDev-L2-AuthApp) | [Live Demo](https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-AuthApp/) |
