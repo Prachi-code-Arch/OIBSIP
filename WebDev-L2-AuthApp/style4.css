@@ -1,0 +1,232 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #10141b;
+  --panel: #1a2029;
+  --panel-border: #2a3240;
+  --teal: #2dd4bf;
+  --teal-deep: #17a394;
+  --text: #e7ecf3;
+  --muted: #8590a6;
+  --error: #f0665b;
+  --error-bg: rgba(240, 102, 91, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 420px;
+}
+
+.view[hidden] {
+  display: none;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+}
+
+.panel h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+  margin-top: 1rem;
+}
+
+label:first-of-type {
+  margin-top: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background: #0f1319;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.18);
+}
+
+.hint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+.field-error {
+  font-size: 0.85rem;
+  color: var(--error);
+  background: var(--error-bg);
+  border-radius: 6px;
+  padding: 0;
+  margin-top: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.15s ease;
+}
+
+.field-error.visible {
+  padding: 0.6rem 0.75rem;
+  margin-top: 1rem;
+  max-height: 100px;
+}
+
+.btn-primary {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--teal);
+  color: #06201c;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.06s ease;
+}
+
+.btn-primary:hover {
+  background: #4fe0cd;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.link-btn {
+  border: none;
+  background: none;
+  color: var(--teal);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.switch-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.dashboard-panel {
+  max-width: 480px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.dashboard-header h1 {
+  margin-bottom: 0;
+  word-break: break-word;
+}
+
+.dashboard-body p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  background: #0f1319;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .panel {
+    padding: 1.75rem 1.4rem;
+  }
+}
