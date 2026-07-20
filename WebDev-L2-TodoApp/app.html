@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do</title>
+  <link rel="stylesheet" href="style3.css" />
+</head>
+<body>
+
+  <main class="app">
+    <header class="app-header">
+      <h1>To-Do</h1>
+      <p class="subtitle">Small tasks, kept in order.</p>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="What needs doing?"
+        autocomplete="off"
+        aria-label="New task"
+      />
+      <button type="submit" id="add-btn">Add Task</button>
+    </form>
+
+    <section class="task-section" aria-labelledby="pending-heading">
+      <div class="section-heading">
+        <h2 id="pending-heading">Pending</h2>
+        <span class="counter" id="pending-counter">0 pending</span>
+      </div>
+      <ul class="task-list" id="pending-list"></ul>
+      <!-- Empty state, shown/hidden via JS -->
+      <p class="empty-state" id="pending-empty">Nothing pending &mdash; add a task above.</p>
+    </section>
+
+    <section class="task-section" aria-labelledby="completed-heading">
+      <div class="section-heading">
+        <h2 id="completed-heading">Completed</h2>
+        <span class="counter" id="completed-counter">0 completed</span>
+      </div>
+      <ul class="task-list" id="completed-list"></ul>
+      <!-- Empty state, shown/hidden via JS -->
+      <p class="empty-state" id="completed-empty">No completed tasks yet.</p>
+    </section>
+  </main>
+
+  <template id="task-template">
+    <li class="task-card">
+      <button class="task-check" type="button" aria-label="Toggle complete">
+        <span class="check-mark">&#10003;</span>
+      </button>
+      <div class="task-main">
+        <span class="task-text" tabindex="0" role="textbox" aria-label="Task text"></span>
+        <input class="task-edit-input" type="text" />
+        <span class="task-time"></span>
+      </div>
+      <div class="task-actions">
+        <button class="task-edit-btn" type="button" aria-label="Edit task">&#9998;</button>
+        <button class="task-delete-btn" type="button" aria-label="Delete task">&#128465;</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="script2.js"></script>
+</body>
+</html>

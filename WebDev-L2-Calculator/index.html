@@ -3,42 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vanilla JS Calculator</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Calculator — OIBSIP</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #1e1e2f;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      color: #ffffff;
+      padding: 20px;
+    }
+    .card {
+      max-width: 560px;
+      background: #26263a;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    h1 { margin-top: 0; font-size: 1.8rem; }
+    p { color: #c8c8d8; line-height: 1.6; }
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+      display: block;
+    }
+    .btn {
+      display: inline-block;
+      background: #4cd97b;
+      color: #1e1e2f;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .btn:hover { background: #5eeb8d; }
+    ul { color: #c8c8d8; line-height: 1.8; }
+  </style>
 </head>
 <body>
-  <div class="calculator">
-    <div class="display">
-      <div class="display-expression" id="expression"></div>
-      <div class="display-current" id="current">0</div>
-    </div>
-
-    <div class="buttons">
-      <button class="btn function" data-action="clear">C</button>
-      <button class="btn function" data-action="backspace">⌫</button>
-      <button class="btn operator" data-action="operator" data-value="÷">÷</button>
-      <button class="btn operator" data-action="operator" data-value="×">×</button>
-
-      <button class="btn number" data-action="number" data-value="7">7</button>
-      <button class="btn number" data-action="number" data-value="8">8</button>
-      <button class="btn number" data-action="number" data-value="9">9</button>
-      <button class="btn operator" data-action="operator" data-value="−">−</button>
-
-      <button class="btn number" data-action="number" data-value="4">4</button>
-      <button class="btn number" data-action="number" data-value="5">5</button>
-      <button class="btn number" data-action="number" data-value="6">6</button>
-      <button class="btn operator" data-action="operator" data-value="+">+</button>
-
-      <button class="btn number" data-action="number" data-value="1">1</button>
-      <button class="btn number" data-action="number" data-value="2">2</button>
-      <button class="btn number" data-action="number" data-value="3">3</button>
-      <button class="btn equals" data-action="equals" rowspan="2">=</button>
-
-      <button class="btn number zero" data-action="number" data-value="0">0</button>
-      <button class="btn number" data-action="decimal" data-value=".">.</button>
-    </div>
+  <div class="card">
+    <h1>Calculator</h1>
+    <p>A calculator built with HTML5, CSS3, and vanilla JavaScript — no frameworks, no <code>eval()</code>.</p>
+    <img src="Calculator.png" alt="Calculator screenshot" />
+    <h3>Features</h3>
+    <ul>
+      <li>Digit input, decimal point, and all four basic operators (+, −, ×, ÷)</li>
+      <li>Chained calculations (e.g. 5 + 3 + 2 =) and mid-expression operator switching</li>
+      <li>Clear (C) and Backspace</li>
+      <li>Division-by-zero handled gracefully with an on-screen error message</li>
+      <li>Floating-point rounding correction</li>
+    </ul>
+    <a class="btn" href="app.html">Launch App →</a>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>

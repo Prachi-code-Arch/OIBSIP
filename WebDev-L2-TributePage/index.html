@@ -3,114 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ada Lovelace | A Tribute</title>
-  <link rel="stylesheet" href="style2.css" />
+  <title>Tribute Page — OIBSIP</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #1e1e2f;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      color: #ffffff;
+      padding: 20px;
+    }
+    .card {
+      max-width: 560px;
+      background: #26263a;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    h1 { margin-top: 0; font-size: 1.8rem; }
+    p { color: #c8c8d8; line-height: 1.6; }
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+      display: block;
+    }
+    .btn {
+      display: inline-block;
+      background: #4cd97b;
+      color: #1e1e2f;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .btn:hover { background: #5eeb8d; }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <p class="eyebrow">A Tribute To</p>
-    <h1>Ada Lovelace</h1>
-    <p class="tagline">The Enchantress of Numbers &mdash; who saw a calculating machine and imagined a computer.</p>
-  </header>
-
-  <section class="hero" aria-label="Portrait of Ada Lovelace">
-    <div class="hero-frame">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/500px-Ada_Lovelace_portrait.jpg"
-        alt="Portrait of Ada Lovelace, painted circa 1840"
-        id="hero-image"
-      />
-    </div>
-    <p class="hero-caption">Augusta Ada King, Countess of Lovelace &middot; 1815&ndash;1852</p>
-  </section>
-  <main>
-    <section class="biography" aria-labelledby="bio-heading">
-      <h2 id="bio-heading">A Life in Numbers</h2>
-
-      <p>
-        Born in London in 1815, Augusta Ada King, Countess of Lovelace, was the only
-        legitimate child of the poet Lord Byron. Her mother, Lady Byron, fearing her
-        daughter might inherit her father's volatile temperament, arranged for Ada to
-        be tutored rigorously in mathematics and logic from an early age &mdash; a
-        highly unusual education for a woman of her time.
-      </p>
-
-      <p>
-        In 1833, at just seventeen, Ada met the mathematician and inventor Charles
-        Babbage and was captivated by his designs for the Analytical Engine, a
-        mechanical general-purpose computer that would not be built in his lifetime.
-        Where others saw an elaborate calculator, Ada saw something further reaching:
-        a machine capable of manipulating symbols according to rules, not merely
-        crunching numbers.
-      </p>
-
-      <p>
-        Between 1842 and 1843, Ada translated an Italian paper on the Analytical
-        Engine and appended her own extensive notes &mdash; nearly three times the
-        length of the original text. Within them, she described an algorithm for the
-        machine to compute Bernoulli numbers, now widely regarded as the first
-        published computer program, decades before any such machine existed.
-      </p>
-
-      <p>
-        Ada Lovelace died in 1852 at the age of thirty-six, never seeing her ideas
-        realized in metal and gears. It would take more than a century, and the
-        arrival of the electronic computer, for the significance of her insight to be
-        fully understood. Today she is remembered as one of computing's first
-        visionaries.
-      </p>
-    </section>
-
-    <section class="timeline" aria-labelledby="timeline-heading">
-      <h2 id="timeline-heading">Punched Into History</h2>
-      <p class="timeline-subtitle">Key moments, recorded ledger-style &mdash; a nod to the punched cards that once instructed mechanical engines.</p>
-
-      <ol class="ledger">
-        <li class="ledger-card">
-          <span class="ledger-year">1815</span>
-          <h3>Born in London</h3>
-          <p>Daughter of poet Lord Byron and mathematician Annabella Milbanke.</p>
-        </li>
-
-        <li class="ledger-card">
-          <span class="ledger-year">1833</span>
-          <h3>Meets Charles Babbage</h3>
-          <p>Introduced to Babbage's Difference Engine at a London gathering, sparking a lifelong fascination.</p>
-        </li>
-
-        <li class="ledger-card">
-          <span class="ledger-year">1843</span>
-          <h3>Publishes Her Notes</h3>
-          <p>Her annotations on the Analytical Engine include what is now considered the first published algorithm intended for a machine.</p>
-        </li>
-
-        <li class="ledger-card">
-          <span class="ledger-year">1852</span>
-          <h3>Passes Away</h3>
-          <p>Dies at thirty-six, her contributions largely unrecognized in her own lifetime.</p>
-        </li>
-
-        <li class="ledger-card">
-          <span class="ledger-year">1980</span>
-          <h3>Language Named in Her Honor</h3>
-          <p>The U.S. Department of Defense names its new programming language "Ada" in her memory.</p>
-        </li>
-      </ol>
-    </section>
-
-    <section class="quote-section" aria-label="Notable quote">
-      <figure class="quote-figure">
-        <blockquote>
-          <p>&ldquo;The Analytical Engine has no pretensions whatever to originate anything. It can do whatever we know how to order it to perform.&rdquo;</p>
-        </blockquote>
-        <figcaption>&mdash; Ada Lovelace, <cite>Notes on the Analytical Engine</cite>, 1843</figcaption>
-      </figure>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>A tribute page built with semantic HTML5 &amp; CSS3.</p>
-  </footer>
-
+  <div class="card">
+    <h1>Tribute Page</h1>
+    <p>A semantic HTML5 tribute page for Ada Lovelace, built with HTML5 and CSS3.</p>
+    <img src="Tribute.png" alt="Tribute page screenshot" />
+    <a class="btn" href="app.html">Launch App →</a>
+  </div>
 </body>
 </html>
