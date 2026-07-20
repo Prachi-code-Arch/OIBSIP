@@ -2,7 +2,7 @@
 
 A calculator built with HTML5, CSS3, and vanilla JavaScript — no frameworks, no `eval()`.
 
-**Live demo:** _add your GitHub Pages link here after deploying_
+**Live demo:** https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-Calculator/
 
 ![Calculator screenshot](Calculator.png)
 

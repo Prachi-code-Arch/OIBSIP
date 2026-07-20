@@ -2,7 +2,7 @@
 
 A front-end-only authentication demo — registration, login, and a protected dashboard — built with HTML5, CSS3, vanilla JavaScript, and `localStorage`.
 
-**Live demo:** _add your GitHub Pages link here after deploying_
+**Live demo:** https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-AuthApp/
 
 ![Auth app screenshot 1](Auth1.png)
 ![Auth app screenshot 2](Auth2.png)

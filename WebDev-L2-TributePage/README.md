@@ -2,7 +2,7 @@
 
 A tribute page for Ada Lovelace, built with semantic HTML5 and modern CSS3.
 
-**Live demo:** _add your GitHub Pages link here after deploying_
+**Live demo:** https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-TributePage/
 
 ![Tribute page screenshot](Tribute.png)
 

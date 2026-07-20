@@ -2,7 +2,7 @@
 
 An interactive to-do list built with HTML5, CSS3, and vanilla JavaScript, with full persistence via `localStorage`.
 
-**Live demo:** _add your GitHub Pages link here after deploying_
+**Live demo:** https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-TodoApp/
 
 ![To-do app screenshot](To-do.png)
 
