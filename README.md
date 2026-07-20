@@ -1,7 +1,9 @@
 # OIBSIP — Oasis Infobyte Internship Submissions
 
 **Intern Name:** Prachi Singhal 
+
 **Domain:** Web Development & Design (Level 2)    
+
 This repository contains all task submissions for my Oasis Infobyte internship, organized by track and level as required by the program guidelines.
 
 Each project folder is self-contained with its own source code, README, and screenshots, and can be opened or run independently.
