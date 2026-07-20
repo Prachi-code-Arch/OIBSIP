@@ -8,7 +8,7 @@ Each project folder is self-contained with its own source code, README, and scre
 
 | # | Project | Description | Folder |
 |---|---------|-------------|--------|
-| 1 | Calculator | A calculator with real state management (no `eval()`) and division-by-zero handling | [WebDev-L2-Calculator/](https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-Calculator/) |
+
 | 2 | Tribute Page | A semantic HTML5 tribute page for Ada Lovelace | [WebDev-L2-TributePage/](https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-TributePage/) |
 | 3 | To-Do App | An interactive to-do list with inline editing, timestamps, and `localStorage` persistence | [WebDev-L2-TodoApp/](https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-TodoApp/) |
 | 4 | Login Authentication System | A client-side auth flow demo (registration, login, protected dashboard) using SHA-256 hashing | [WebDev-L2-AuthApp/](https://prachi-code-arch.github.io/OIBSIP/WebDev-L2-AuthApp/) |
