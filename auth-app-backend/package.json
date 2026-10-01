@@ -1,0 +1,14 @@
+{
+  "name": "auth-app-backend",
+  "version": "1.0.0",
+  "description": "Login authentication system with a real Express backend, bcrypt hashing, and server-side sessions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "bcryptjs": "^2.4.3"
+  }
+}
