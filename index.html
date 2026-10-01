@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>OIBSIP — Prachi Singhal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#0d1117; --panel:#151b23; --panel-2:#1b222c; --border:#262e38;
+  --text:#e6edf3; --muted:#8b96a5; --accent:#5eead4; --red:#fe0000;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',sans-serif; color:var(--text);
+  line-height:1.6; position:relative; overflow-x:hidden; background:var(--bg);
+}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+
+body::before{
+  content:''; position:fixed; inset:0; z-index:-2;
+  background-image:
+    linear-gradient(rgba(94,234,212,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94,234,212,0.05) 1px, transparent 1px);
+  background-size:42px 42px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%);
+}
+body::after{
+  content:''; position:fixed; inset:-20%; z-index:-1;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(94,234,212,0.14) 0%, transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(254,0,0,0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(45,212,191,0.08) 0%, transparent 50%);
+  filter:blur(40px);
+  animation:drift 18s ease-in-out infinite alternate;
+}
+@keyframes drift{0%{transform:translate(0,0) scale(1);}100%{transform:translate(-2%,2%) scale(1.08);}}
+@media (prefers-reduced-motion:reduce){ body::after{animation:none;} }
+
+/* ===== NAV ===== */
+nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.4rem 0; border-bottom:1px solid var(--border);
+}
+.logo{display:flex; align-items:center; gap:.6rem; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.1rem; letter-spacing:.02em;}
+.logo-mark{
+  width:26px; height:26px; border-radius:50%; border:2px solid var(--red);
+  display:flex; align-items:center; justify-content:center; position:relative;
+}
+.logo-mark::after{content:''; width:8px; height:8px; border-radius:50%; background:var(--red);}
+.nav-links{display:flex; gap:1.8rem; list-style:none; font-size:.9rem;}
+.nav-links a{color:var(--text); text-decoration:none; padding-bottom:.4rem; position:relative;}
+.nav-links a.active{color:#fff;}
+.nav-links a.active::after{
+  content:''; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--red);
+}
+@media (max-width:620px){ .nav-links{display:none;} }
+
+/* ===== HERO ===== */
+.hero{
+  display:flex; flex-direction:column; align-items:center;
+  padding:3.5rem 0; text-align:center;
+}
+.hero .glow-card{width:100%; max-width:640px;}
+.hero .hero-actions{margin-top:1.8rem;}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace; font-size:.75rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent); margin-bottom:.9rem;
+}
+
+.hero-actions{display:flex; gap:.8rem; margin-top:1.3rem;}
+.btn{
+  font-family:'JetBrains Mono',monospace; font-size:.82rem; font-weight:700;
+  padding:.65rem 1.2rem; border-radius:3px; text-decoration:none; display:inline-block;
+  transition:background .15s ease, border-color .15s ease, transform .08s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--red); color:#fff; border:1px solid var(--red);}
+.btn-primary:hover{background:#ff2a2a}
+.btn-ghost{background:transparent; color:var(--text); border:1px solid var(--border);}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent);}
+
+/* Glowing name card */
+.glow-card{
+  background:var(--panel); border:1px solid var(--border); border-radius:16px;
+  padding:3rem 2rem; text-align:center; position:relative; overflow:hidden;
+  min-height:260px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.glow-card::before{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at 50% 45%, rgba(254,0,0,0.16) 0%, transparent 60%);
+}
+.glow-card h1{
+  position:relative; font-family:'Space Grotesk',sans-serif; font-weight:700;
+  font-size:clamp(1.8rem,4vw,2.4rem); text-shadow:0 0 30px rgba(254,0,0,0.45);
+}
+.glow-card p{position:relative; color:var(--muted); margin-top:.6rem; font-size:.95rem;}
+.terminal-tag{
+  position:fixed; right:1.5rem; bottom:1.5rem; z-index:5;
+  font-family:'JetBrains Mono',monospace; font-size:.8rem;
+  background:var(--panel); border:1px solid var(--border); border-radius:8px;
+  padding:.6rem 1rem; color:var(--accent); box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== PROJECTS ===== */
+.section-head{padding:1rem 0 .5rem; text-align:center;}
+.section-head h2{font-family:'Space Grotesk',sans-serif; font-size:1.7rem; font-weight:700;}
+.section-head p{color:var(--muted); margin-top:.5rem; font-size:.92rem;}
+
+.stack{display:flex; justify-content:center; gap:.5rem; flex-wrap:wrap; margin-top:1.3rem;}
+.badge{
+  font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--accent);
+  border:1px solid var(--border); background:var(--panel); padding:.3rem .7rem; border-radius:20px;
+}
+
+.grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:2rem;}
+.card{
+  background:var(--panel); border:1px solid var(--border); border-radius:12px;
+  padding:1.5rem; display:flex; flex-direction:column; gap:.6rem;
+  transition:border-color .15s ease, transform .1s ease;
+}
+.card:hover{border-color:var(--red); transform:translateY(-2px)}
+.card-num{font-family:'JetBrains Mono',monospace; font-size:.75rem; color:var(--accent);}
+.card h3{font-family:'Space Grotesk',sans-serif; font-size:1.15rem; font-weight:600}
+.card p{color:var(--muted); font-size:.9rem; flex:1}
+.card-links{display:flex; gap:.6rem; margin-top:.4rem}
+.card-links a{
+  font-family:'JetBrains Mono',monospace; font-size:.78rem; text-decoration:none;
+  padding:.45rem .8rem; border-radius:3px; border:1px solid var(--border); color:var(--text);
+  transition:background .15s ease, border-color .15s ease;
+}
+.card-links a.primary{background:var(--red); color:#fff; border-color:var(--red); font-weight:700;}
+.card-links a.primary:hover{background:#ff2a2a}
+.card-links a:not(.primary):hover{border-color:var(--accent); color:var(--accent);}
+
+@media (max-width:620px){ .grid{grid-template-columns:1fr;} }
+
+footer{
+  text-align:center; margin:3.5rem 0 2.5rem; color:var(--muted);
+  font-family:'JetBrains Mono',monospace; font-size:.78rem;
+}
+footer a{color:var(--accent); text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <div class="logo">
+      <span class="logo-mark"></span>
+      PRACHI<span style="color:var(--red)">.</span>DEV
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="https://github.com/Prachi-code-Arch/OIBSIP">GitHub</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="glow-card">
+      <p class="eyebrow">OIBSIP · Web Dev Level 2</p>
+      <h1>Prachi Singhal</h1>
+      <p>Build. Learn. Ship.</p>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="https://github.com/Prachi-code-Arch/OIBSIP" class="btn btn-ghost">Read Docs</a>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <p>Four front-end builds — HTML5, CSS3 &amp; vanilla JavaScript, no frameworks.</p>
+      <div class="stack">
+        <span class="badge">HTML5</span>
+        <span class="badge">CSS3</span>
+        <span class="badge">Vanilla JS</span>
+        <span class="badge">Node.js backend (Tasks 3 &amp; 4)</span>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <span class="card-num">01 · Calculator</span>
+        <h3>Calculator</h3>
+        <p>State-managed calculator with chained operations and division-by-zero handling — no <code>eval()</code>.</p>
+        <div class="card-links">
+          <a class="primary" href="./WebDev-L2-Calculator/">Live demo</a>
+          <a href="https://github.com/Prachi-code-Arch/OIBSIP/tree/main/WebDev-L2-Calculator">Code</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-num">02 · Tribute Page</span>
+        <h3>Tribute Page</h3>
+        <p>A semantic HTML5 tribute to Ada Lovelace, styled as an ink-and-parchment Victorian ledger.</p>
+        <div class="card-links">
+          <a class="primary" href="./WebDev-L2-TributePage/">Live demo</a>
+          <a href="https://github.com/Prachi-code-Arch/OIBSIP/tree/main/WebDev-L2-TributePage">Code</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-num">03 · To-Do App</span>
+        <h3>To-Do App</h3>
+        <p>Inline editing, timestamps, and full persistence — now backed by a real Express API.</p>
+        <div class="card-links">
+          <a class="primary" href="./WebDev-L2-TodoApp/">Live demo</a>
+          <a href="https://github.com/Prachi-code-Arch/OIBSIP/tree/main/WebDev-L2-TodoApp">Code</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-num">04 · Auth System</span>
+        <h3>Login Authentication</h3>
+        <p>Registration, login, and a protected dashboard — bcrypt hashing with real server-side sessions.</p>
+        <div class="card-links">
+          <a class="primary" href="./WebDev-L2-AuthApp/">Live demo</a>
+          <a href="https://github.com/Prachi-code-Arch/OIBSIP/tree/main/WebDev-L2-AuthApp">Code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built for the OIBSIP program · <a href="https://github.com/Prachi-code-Arch/OIBSIP">View full repository ↗</a></p>
+  </footer>
+
+</div>
+
+<div class="terminal-tag">&gt;_ Terminal</div>
+
+</body>
+</html>
