@@ -1,0 +1,12 @@
+{
+  "name": "todo-app-backend",
+  "version": "1.0.0",
+  "description": "To-Do app with a real Express + JSON-file backend, replacing localStorage",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
