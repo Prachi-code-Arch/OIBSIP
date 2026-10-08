@@ -1,37 +1,33 @@
 const expressionEl = document.getElementById('expression');
 const currentEl = document.getElementById('current');
 const buttons = document.querySelectorAll('.btn');
+
 let state = {
-  firstOperand: null,      
-  operator: null,          
-  secondOperand: null,    
-  currentInput: '0',     
-  waitingForSecondOperand: false, 
-  justCalculated: false,  
+  firstOperand: null,
+  operator: null,
+  secondOperand: null,
+  currentInput: '0',
+  waitingForSecondOperand: false,
+  justCalculated: false,
+  error: null,
 };
 
 function updateDisplay() {
-  currentEl.textContent = state.currentInput;
+  currentEl.textContent = state.error || state.currentInput;
 
-  if (state.operator && !state.waitingForSecondOperand) {
-   
-    expressionEl.textContent = `${state.firstOperand} ${state.operator}`;
-  } else if (state.operator) {
+  if (state.operator) {
     expressionEl.textContent = `${state.firstOperand} ${state.operator}`;
   } else {
     expressionEl.textContent = '';
   }
 }
 
-
 function inputDigit(digit) {
   if (state.waitingForSecondOperand || state.justCalculated) {
-   
     state.currentInput = digit;
     state.waitingForSecondOperand = false;
     state.justCalculated = false;
   } else {
-    
     state.currentInput =
       state.currentInput === '0' ? digit : state.currentInput + digit;
   }
@@ -44,7 +40,6 @@ function inputDecimal() {
     state.justCalculated = false;
     return;
   }
- 
   if (!state.currentInput.includes('.')) {
     state.currentInput += '.';
   }
@@ -54,7 +49,6 @@ function handleOperator(nextOperator) {
   const inputValue = parseFloat(state.currentInput);
 
   if (state.operator && state.waitingForSecondOperand) {
-
     state.operator = nextOperator;
     return;
   }
@@ -79,9 +73,9 @@ function calculate(first, second, operator) {
   switch (operator) {
     case '+':
       return first + second;
-    case '−':        
+    case '−':
       return first - second;
-    case '×':        
+    case '×':
       return first * second;
     case '÷':
       if (second === 0) return 'ERROR';
@@ -124,6 +118,7 @@ function handleClear() {
     currentInput: '0',
     waitingForSecondOperand: false,
     justCalculated: false,
+    error: null,
   };
 }
 
@@ -134,14 +129,14 @@ function handleBackspace() {
 }
 
 function showError(message) {
-  currentEl.textContent = message;
-  expressionEl.textContent = '';
   handleClear();
-  state.currentInput = '0';
+  state.error = message; // rendered by updateDisplay()
 }
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
+    if (state.error) handleClear(); // clear the message on the next key press
+
     const { action, value } = button.dataset;
     switch (action) {
       case 'number':
